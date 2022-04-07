@@ -5,9 +5,9 @@ import Button from "./button/Button";
 function App() {
   return (
       <div className="wrapper">
-          <Button />
-          <Button text={'Охринеть'}/>
-          <Button />
+          <Button>187</Button>
+          <Button outline text={'Охренеть'}/>
+          <Button test={'AGA'}>321</Button>
           <Header />
           <div className="content">
               <div className="container">
