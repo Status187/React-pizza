@@ -1,9 +1,3 @@
-import Button from "./button/Button"
-import Header from "./header/Header";
-import Categories from "./categories/Categories";
-
-export {
-    Button,
-    Header,
-    Categories,
-};
+export { default as Button } from "./button/Button"
+export { default as Header } from "./header/Header"
+export { default as Categories } from "./categories/Categories"
