@@ -1,20 +1,25 @@
 import React from "react";
 import {Header} from './components'
 import {Home, Cart} from "./pages";
-import { Route }  from 'react-router-dom'
+import {Switch, Route, BrowserRouter} from 'react-router-dom'
 
 function App() {
 
-    const clickOnButton = () => {
-        alert('Yeah!')
-    }
+    const CART_PAGE = "/cart";
+    const HOME_PAGE = "/";
 
     return (
       <div className="wrapper">
           <Header />
           <div className="content">
-              <Route path="/home" component={Home} exact></Route>
-              <Route path="/cart" component={Cart} exact></Route>
+              <BrowserRouter>
+                  <Switch>
+                      <Route path={CART_PAGE} component={Cart} />
+                      <Route path={HOME_PAGE} component={Home} />
+                  </Switch>
+              </BrowserRouter>
+
+
           </div>
       </div>
   );
