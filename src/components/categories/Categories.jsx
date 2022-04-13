@@ -1,25 +1,25 @@
 import React, {useState} from "react";
 
 const Categories = ({items, onClickItem}) => {
+    // debugger;
 
-    const [activeItem, setActiveItem] = React.useState(null)
+    const [activeItem, setActiveItem] = React.useState(null);
 
     const onSelectItem = (index) => {
         setActiveItem(index);
     };
 
-    console.log(activeItem)
+    // console.log(activeItem)
 
     return (
         <div className="categories">
             <ul>
-                <li className={activeItem === null ? 'active' : ''} onClick={() => onSelectItem(null)}>Все</li>
-                {
+                <li className={activeItem === null ? 'active' : ''}
+                    onClick={() => onSelectItem(null)}>Все
+                </li>
+                {items &&
                     items.map((name, index) => (
-                        <li className={
-                            activeItem === index ? 'active' : ''
-                        } onClick={() => setActiveItem(index)} key={`${name}_${index}`}>
-                            {name}
+                        <li className={ activeItem === index ? 'active' : '' } onClick={() => onSelectItem(index)} key={`${name}_${index}`}>{name}
                         </li>
                     ))
                 }
