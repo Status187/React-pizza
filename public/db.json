@@ -1,0 +1,104 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548240_26-p-pitstsa-na-belom-fone-47.jpg",
+      "name": "Пеперони Фреш с перцем",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 410,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 1,
+      "imageUrl": "https://kartinkin.net/uploads/posts/2021-04/thumbs/1617249580_16-p-pitstsa-na-belom-fone-krasivo-25.jpg",
+      "name": "Пеперони Фреш",
+      "types": [0, 1],
+      "sizes": [26, 40],
+      "price": 390,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548240_26-p-pitstsa-na-belom-fone-47.jpg",
+      "name": "Маргарита",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 430,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://kartinkin.net/uploads/posts/2021-04/thumbs/1617249580_16-p-pitstsa-na-belom-fone-krasivo-25.jpg",
+      "name": "Сырная",
+      "types": [0],
+      "sizes": [26, 30, 40],
+      "price": 400,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "imageUrl": "https://static.tildacdn.com/tild6533-3533-4330-a639-666662373861/1.jpeg",
+      "name": "Халапеньо",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 395,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://pizzahouse67.ru/wp-content/uploads/2020/05/BUSH8454-scaled.jpg",
+      "name": "Грибная",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 415,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://static.tildacdn.com/tild3262-3534-4264-a364-386531633535/1.jpeg",
+      "name": "Бекон",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 380,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://pizzahouse67.ru/wp-content/uploads/2020/05/BUSH8454-scaled.jpg",
+      "name": "ананасовая",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 390,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://static.tildacdn.com/tild6533-3533-4330-a639-666662373861/1.jpeg",
+      "name": "Фруктовая",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 410,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614548240_26-p-pitstsa-na-belom-fone-47.jpg",
+      "name": "4 сыра",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 400,
+      "category": 0,
+      "rating": 4
+    }
+  ]
+}

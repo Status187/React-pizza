@@ -1,7 +1,6 @@
 import React from "react";
 
 function SortPopup({items}) {
-    console.log(items)
 
     const [visiblePopup, setVisiblePopup] = React.useState(false);
     const [activeItem, setActiveItem] = React.useState(0);
@@ -13,8 +12,6 @@ function SortPopup({items}) {
         setVisiblePopup(false)
     };
 
-    console.log(sortRef.current)
-
     const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup)
     }
@@ -22,7 +19,6 @@ function SortPopup({items}) {
     const handleOutsideClick = (e) => {
         if (!e.path.includes(sortRef.current)) {
             setVisiblePopup(false)
-            console.log('outside')
         }
     }
 
