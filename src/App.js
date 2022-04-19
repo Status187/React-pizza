@@ -2,15 +2,16 @@ import React from "react";
 import {Header} from './components'
 import {Home, Cart} from "./pages";
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import axios from "axios";
 
 function App() {
     const [pizzas,setPizzas] = React.useState([])
 
     React.useEffect(() => {
-        fetch('http://localhost:3000/db.json')
-            .then((response) => response.json())
-            .then(json => setPizzas(json.pizzas));
-
+        axios.get('http://localhost:3000/db.json').then(({data}) => {
+            console.log(data.pizzas)
+            setPizzas(data.pizzas)
+        });
     }, []);
 
     const CART_PAGE = "/cart";

@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import PropTypes from 'prop-types';
 
 function PizzaBlock (props) {
 
@@ -16,7 +17,6 @@ function PizzaBlock (props) {
 
     const [activeType, setActiveType] = React.useState(props.types[0]);
     const [activeSize, setActiveSize] = React.useState(props.sizes[0]);
-    console.log(props.name, props.types)
 
     return (
         <div className="pizza-block">
@@ -80,5 +80,21 @@ function PizzaBlock (props) {
         </div>
     )
 };
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+    price: PropTypes.number,
+    types: PropTypes.arrayOf(PropTypes.number),
+    sizes: PropTypes.arrayOf(PropTypes.number),
+}
+
+PizzaBlock.defaultProps = {
+    name: 'товара нет',
+    price: 0,
+    imageUrl: 'https://st2.depositphotos.com/5616164/11030/v/950/depositphotos_110305262-stock-illustration-stop-pizza-forbidden-fast-food.jpg',
+    types: [],
+    sizes: [],
+}
 
 export default PizzaBlock;
