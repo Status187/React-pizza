@@ -3,20 +3,20 @@ import ReactDOM from "react-dom/client";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './scss/app.scss';
-import {BrowserRouter as Routes}  from 'react-router-dom'
+import {BrowserRouter}  from 'react-router-dom'
+import store from './redux/store'
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-        <Routes>
-            <App />
-        </Routes>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
 reportWebVitals();
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );

@@ -3,34 +3,55 @@ import {Header} from './components'
 import {Home, Cart} from "./pages";
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
 import axios from "axios";
+import { connect } from "react-redux";
+// import store from "./redux/store";
+import {setPizzas} from "./redux/actions/pizzas";
 
-function App() {
-    const [pizzas,setPizzas] = React.useState([])
+const CART_PAGE = "/cart";
+const HOME_PAGE = "/";
 
-    React.useEffect(() => {
+// function App() {
+//     React.useEffect(() => {
+//         axios.get('http://localhost:3000/db.json').then(({data}) => {
+//             setPizzas(data.pizzas)
+//         });
+//     }, []);
+//
+//
+//
+//     return
+// }
+
+class App extends React.Component {
+    componentDidMount() {
         axios.get('http://localhost:3000/db.json').then(({data}) => {
-            console.log(data.pizzas)
-            setPizzas(data.pizzas)
+            window.store.dispatch(setPizzas(data.pizzas));
         });
-    }, []);
+    }
 
-    const CART_PAGE = "/cart";
-    const HOME_PAGE = "/";
+    render() {
+        console.log(this.props.items);
+        return(
+            <div className="wrapper">
+                <Header />
+                <div className="content">
+                    <BrowserRouter>
+                        <Switch>
+                            <Route path={CART_PAGE} component={Cart} exact/>
+                            <Route path={HOME_PAGE} render={() => <Home items={this.props.items}/>} exact/>
 
-    return (
-      <div className="wrapper">
-          <Header />
-          <div className="content">
-              <BrowserRouter>
-                  <Switch>
-                      <Route path={CART_PAGE} component={Cart} exact/>
-                      <Route path={HOME_PAGE} render={() => <Home items={pizzas}/>} exact/>
-
-                  </Switch>
-              </BrowserRouter>
-          </div>
-      </div>
-  );
+                        </Switch>
+                    </BrowserRouter>
+                </div>
+            </div>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        items: state.pizzas.items
+    }
+}
+
+export default connect(mapStateToProps)(App);
