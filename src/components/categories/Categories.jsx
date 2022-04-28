@@ -1,32 +1,34 @@
 import React, {useState} from "react";
 
-const Categories = ({items, onClickItem}) => {
-    // debugger;
+const Categories = React.memo(function Categories({items, onClickItem}) {
 
     const [activeItem, setActiveItem] = React.useState(null);
 
     const onSelectItem = (index) => {
         setActiveItem(index);
+        onClickItem(index);
     };
 
-    // console.log(activeItem)
+    console.log('Render categories')
 
     return (
         <div className="categories">
             <ul>
-                <li className={activeItem === null ? 'active' : ''}
+                <li className={ activeItem === null ? 'active' : '' }
                     onClick={() => onSelectItem(null)}>Все
                 </li>
                 {items &&
                     items.map((name, index) => (
-                        <li className={ activeItem === index ? 'active' : '' } onClick={() => onSelectItem(index)} key={`${name}_${index}`}>{name}
+                        <li className={ activeItem === index ? 'active' : '' }
+                            onClick={(event) => onSelectItem(index)} key={`${name}_${index}`}>
+                            {name}
                         </li>
                     ))
                 }
             </ul>
         </div>
     )
-};
+});
 
 // class Categories extends React.Component {
 //
